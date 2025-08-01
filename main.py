@@ -9,8 +9,8 @@ from aiogram.types import Message
 
 load_dotenv()
 
-TOKEN = os.getenv('BOT_TOKEN')
-
+TOKEN = os.getenv("BOT_TOKEN")
+CREATOR_NAME = os.getenv("CREATOR_NAME")
 dp = Dispatcher()
 
 
@@ -18,6 +18,11 @@ dp = Dispatcher()
 @dp.message(Command("start"))
 async def command_start_handler(message: Message) -> None:
     await message.reply(f"Hello ! {message.from_user.first_name}")
+
+
+@dp.message(Command("help"))
+async def help_by_information(message: Message):
+    await message.answer(f"Мой хозяин: {CREATOR_NAME}")
 
 
 # Run the bot
@@ -28,4 +33,3 @@ async def main() -> None:
 
 if __name__ == "__main__":
     asyncio.run(main())
-          
