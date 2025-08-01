@@ -10,7 +10,7 @@ from aiogram.types import Message
 load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
-CREATOR_NAME = os.getenv("CREATOR_NAME")
+CREATOR_NAME = "@atabackoff"
 dp = Dispatcher()
 
 
